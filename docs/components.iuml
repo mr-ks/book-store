@@ -1,0 +1,22 @@
+@startuml
+
+
+interface "book details\n service" as BDS
+interface "book reviews\n service" as BRS
+interface "book list\n service" as BLS
+
+
+component [book store \n        <<UI>>] as BSC
+component [book details] as BDC
+component [book list] as BLC
+component [book reviews] as BRC
+
+BDS -down- BDC
+BRS -down- BRC
+BLS -down- BLC
+
+BSC --( BDS
+BSC --( BRS
+BSC --( BLS
+
+@enduml
